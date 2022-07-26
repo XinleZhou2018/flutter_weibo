@@ -1,6 +1,6 @@
 /// APP 接口 及 服务器地址配置类
 class ApiUtil {
-  static const DEBUG_MODE = true;
+  static const DEBUG_MODE = false;
   static const LOG_DEBUG_MODE = true; //日志log
 
   static const PROXY_HOST = "8888";
@@ -28,7 +28,7 @@ class ApiUtil {
 
   ///网关环境
   // static const DEBUG_HOST = "121.40.11.202:8036/app";
-  static const ONLINE_HOST = "172.16.41.69:8088";
+  static const ONLINE_HOST = "150.158.96.11";
 
   static const USER_TIMELINE = "/queryWeibo";
 }
