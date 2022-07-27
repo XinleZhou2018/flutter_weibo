@@ -18,4 +18,18 @@ class BaseInterceptor extends InterceptorsWrapper {
 
     return handler.next(response); // continue
   }
+
+      @override
+  void onError(DioError err, ErrorInterceptorHandler handler) {
+      // 非200 服务器错误都会走到这
+
+      //     if (err.requestOptions.path == ApiUtil.OPERATE_PLAYER_DATA) {
+      //   Map<String, dynamic> jsonData = response.data;
+      //   ResponseResult rr = ResponseResult.fromJson(jsonData);
+      //   throw APIError(errorCode: rr.code, message: rr.message);
+      // }
+
+
+     super.onError(err, handler);
+  }
 }

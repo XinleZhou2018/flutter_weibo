@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:weibo/core/network/core/dio_builder.dart';
 import 'package:weibo/models/status.dart';
@@ -38,12 +39,13 @@ class HomeController extends GetxController {
   void _queryHomeTimeLine() {
     StatusApi statusApi = StatusApi(dio!);
 
-    statusApi.queryUserTimeLine(page).then((value) {
+    statusApi.queryUserTimeLine(page, AccessToken.accessToken).then((value) {
       statusList = value;
 
       update(['list_view']);
     }).catchError((error) {
       LogUtil.v(error);
+      showToast("请关注公众号 fullstack2022 获取Token", duration: Duration(seconds: 60));
     });
   }
 
@@ -55,7 +57,7 @@ class HomeController extends GetxController {
     page = 1;
     StatusApi statusApi = StatusApi(dio!);
 
-    statusApi.queryUserTimeLine(page).then((value) {
+    statusApi.queryUserTimeLine(page, AccessToken.accessToken).then((value) {
       statusList = value;
 
       update(['list_view']);
@@ -73,7 +75,7 @@ class HomeController extends GetxController {
   void loadMoreData() {
     StatusApi statusApi = StatusApi(dio!);
 
-    statusApi.queryUserTimeLine(page).then((value) {
+    statusApi.queryUserTimeLine(page, AccessToken.accessToken).then((value) {
       if (ObjectUtil.isEmptyList(value)) {
         refreshController.loadNoData();
       } else {

@@ -1,6 +1,6 @@
 /// APP 接口 及 服务器地址配置类
 class ApiUtil {
-  static const DEBUG_MODE = false;
+  static const DEBUG_MODE = true;
   static const LOG_DEBUG_MODE = true; //日志log
 
   static const PROXY_HOST = "8888";

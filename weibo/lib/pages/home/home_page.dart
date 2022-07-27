@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                                 controller.loadMoreData();
                               },
                               child: ListView.builder(
-                                padding: EdgeInsets.zero,
+                                  padding: EdgeInsets.zero,
                                   itemCount: controller.statusList!.length,
                                   itemBuilder: ((context, index) {
                                     LogUtil.v("---------Item Builder---------");

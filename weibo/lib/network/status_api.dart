@@ -11,5 +11,5 @@ abstract class StatusApi {
   factory StatusApi(Dio dio) = _StatusApi;
 
   @GET(ApiUtil.USER_TIMELINE)
-  Future<List<Status>?> queryUserTimeLine(@Query("page") int page);
+  Future<List<Status>?> queryUserTimeLine(@Query("page") int page, @Query("token") String token);
 }

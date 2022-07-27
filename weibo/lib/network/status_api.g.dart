@@ -8,10 +8,11 @@ class _StatusApi implements StatusApi {
   final Dio _dio;
 
   @override
-  queryUserTimeLine(int page) async {
+  queryUserTimeLine(int page, String token) async {
     ArgumentError.checkNotNull(page, 'page');
+    ArgumentError.checkNotNull(token, 'token');
 
-    final queryParameters = <String, dynamic>{'page': page};
+    final queryParameters = <String, dynamic>{'page': page, 'token':token};
     final Response _result = await _dio.request(
       '/weibo/queryWeibo',
       queryParameters: queryParameters,
