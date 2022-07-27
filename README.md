@@ -1,5 +1,9 @@
 ## Flutter 3.x Flutter 3.x Flutter 3.x 重要的事说三遍！
 
+有疑问请关注公众号 fullstack2022，答疑：
+
+![qrcode_for_gh_005b0b4ab433_258.jpg](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0a27cb86c044b96a85b12622aebe765~tplv-k3u1fbpfcp-watermark.image?)
+
 
 ## 效果：
 我们先来看一下效果：<br>
